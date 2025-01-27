@@ -10,5 +10,7 @@
     <color name="colorPrimaryDark">@color/primary_150</color>
     <color name="primary_150">#F15C2A</color>
     <color name="colorAccent">#DC6B2F</color>
+    <color name="greenSuccess">#FF2FA329</color>
+    <color name="redError">#FFB20018</color>
     <color name="windowBackground">#FAFAFA</color>
 </resources>

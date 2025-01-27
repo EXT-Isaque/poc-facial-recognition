@@ -13,38 +13,17 @@
         android:clipChildren="false"
         android:clipToPadding="false"
         android:paddingVertical="20dp"
-        android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginHorizontal="20dp"
-            app:cardCornerRadius="8dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="15dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="Bem vindo"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:gravity="center_vertical"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
             app:cardCornerRadius="8dp"
             android:layout_gravity="center">
 
@@ -52,35 +31,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="15dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/result_success"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gerenciadora de risco da Strada."
+                    android:layout_marginTop="20dp"
+                    android:text="Foto enviada!"
                     android:textSize="24sp"
-                    android:gravity="start"
-                    android:textColor="@color/black"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="26dp"
-                    android:gravity="center"
-                    android:text="Sua segurança é nossa prioridade!"
-                    android:textColor="@color/titleGray"
                     android:textStyle="bold"
-                    android:textSize="16sp" />
+                    android:gravity="start"
+                    android:textColor="@color/black85"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="26dp"
-                    android:text="Realize uma das etapas da analise de reconhecimento facial para permitir a análise de risco detalhada e garantir uma segurança no fechamento de carga.\nPronto para começar?"
+                    android:text="Iremos analisar a sua foto.\n\n Acompanhe o andamento de sua viagem no aplicativo StradaLog."
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:textColor="@color/black85"
-                    android:gravity="start" />
+                    android:gravity="center_horizontal" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -88,13 +66,13 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/start_btn"
+        android:id="@+id/result_btn"
         style="@style/Widget.Material3.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="40dp"
-        android:text="Começar"
+        android:text="Ok"
         android:textAppearance="@style/M3bodylargeManrope14White"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
