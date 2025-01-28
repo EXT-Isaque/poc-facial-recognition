@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import br.com.nxcd.facedetection.NxcdFaceDetection
 import com.example.poc_facial_recognition.R
 import com.google.android.datatransport.BuildConfig
@@ -44,6 +45,8 @@ class InstructionsFragment : Fragment() {
     }
 
     private fun treatResultSDK(resultCode: Int, resultIntent: Intent?) {
+        val bundle = Bundle()
+
         if (Activity.RESULT_CANCELED == resultCode) {
             Log.d(TAG, "Face detection canceled")
 
@@ -53,6 +56,8 @@ class InstructionsFragment : Fragment() {
                         resultIntent.getSerializableExtra(NxcdFaceDetection.RESULT) as HashMap<String, Any>?
                     Log.d(TAG, "Analyze image has failed: " + result.toString())
                     Toast.makeText(requireContext(), result.toString(), Toast.LENGTH_LONG).show()
+                    bundle.putBoolean("result", false)
+                    findNavController().navigate(R.id.resultFragment,bundle)
                 }
 
                 if (resultIntent.hasExtra(NxcdFaceDetection.THROWABLE)) {
@@ -60,6 +65,8 @@ class InstructionsFragment : Fragment() {
                         resultIntent.getSerializableExtra(NxcdFaceDetection.THROWABLE) as Throwable?
                     Log.e(TAG, "Analyze image has failed.", throwable)
                     Toast.makeText(requireContext(), throwable!!.message, Toast.LENGTH_LONG).show()
+                    bundle.putBoolean("result", false)
+                    findNavController().navigate(R.id.resultFragment,bundle)
                 }
             }
             return
@@ -73,15 +80,18 @@ class InstructionsFragment : Fragment() {
             }
 
             val result =
-                (resultDataFromAPI!!["data"] as HashMap<String?, Any?>)["isAlive"] as Boolean
+                (resultDataFromAPI!!["data"] as HashMap<*, *>)["isAlive"] as Boolean
 
+            bundle.putBoolean("result", result)
+            findNavController().navigate(R.id.resultFragment,bundle)
         }
     }
 
     private fun startFaceDetection() {
         val nxcdFaceDetection =
-            NxcdFaceDetection(DETECTION_REQUEST_CODE, "66913b8060589336ec04d0ae:t0JipAnvuOIV0E6PZNENqCep")
+            NxcdFaceDetection(DETECTION_REQUEST_CODE, "66913b8060589336ec04d0ae:t0JipAnvuOIV0E6PZNENqCep", R.style.SDKTheme_Ex)
         nxcdFaceDetection.setHomologation()
+
         nxcdFaceDetection.startFaceDetection(this)
     }
 }

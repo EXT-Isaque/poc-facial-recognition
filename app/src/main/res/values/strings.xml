@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">poc-facial-recognition</string>
+    <string name="result_success">Iremos analisar a sua foto.\n\nAcompanhe o andamento de sua viagem no aplicativo StradaLog.</string>
+    <string name="result_error">Tivemos um erro ao enviar a foto.\n\nPor favor, tente novamente</string>
+    <string name="ok_understood">Ok, entendi</string>
+    <string name="take_new_picture">Tirar nova foto</string>
 </resources>

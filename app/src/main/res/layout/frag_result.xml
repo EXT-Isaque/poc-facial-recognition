@@ -35,12 +35,14 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
+                    android:id="@+id/resultLogo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:src="@drawable/result_success"/>
 
                 <TextView
+                    android:id="@+id/resultTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
@@ -51,6 +53,7 @@
                     android:textColor="@color/black85"/>
 
                 <TextView
+                    android:id="@+id/resultBody"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="26dp"
