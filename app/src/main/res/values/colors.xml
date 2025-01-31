@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="titleGray">#101010</color>
+    <color name="black85">#85000000</color>
+
+    <color name="colorPrimary">@color/orangeDefault</color>
+    <color name="orangeDefault">#FFF15C2A</color>
+    <color name="colorPrimaryDark">@color/primary_150</color>
+    <color name="primary_150">#F15C2A</color>
+    <color name="colorAccent">#DC6B2F</color>
+    <color name="greenSuccess">#FF2FA329</color>
+    <color name="redError">#FFB20018</color>
+    <color name="windowBackground">#FAFAFA</color>
+</resources>
